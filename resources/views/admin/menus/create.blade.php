@@ -31,6 +31,16 @@
                             </div>
 
                             <div class="sm:col-span-6">
+                                <label for="message"
+                                       class="block mb-2 text-sm font-medium ">Categories</label>
+                                <select multiple>
+                                    @foreach($categories as $categoriy)
+                                        <option>{{ $categoriy->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="sm:col-span-6">
                                 <label class="block mb-2 text-sm font-medium "
                                        for="file_input">Upload image</label>
                                 <input
