@@ -12,30 +12,54 @@
             </div>
             <div class="m-2 p-2 bg-slate-100 rounded">
                 <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
-                    <form enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.tables.store') }}">
+                        @csrf
                         <div class="grid gap-6 mb-6 lg:grid-cols-2">
                             <div class="sm:col-span-6">
-                                <label for="first_name"
+                                <label for="name"
                                        class="block mb-2 text-sm font-medium">Name</label>
-                                <input type="text" id="first_name"
+                                <input type="text"
+                                       id="name"
+                                       name="name"
                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                       placeholder="John" required="">
+                                       placeholder="Table Name"
+                                       required="">
                             </div>
 
                             <div class="sm:col-span-6">
-                                <label for="message"
-                                       class="block mb-2 text-sm font-medium ">Description</label>
-                                <textarea id="message" rows="4"
-                                          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                          placeholder="Leave a comment..."></textarea>
+                                <label for="guest_number"
+                                       class="block mb-2 text-sm font-medium">Guest number</label>
+                                <input type="number"
+                                       id="guest_number"
+                                       name="guest_number"
+                                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                       required="">
                             </div>
 
                             <div class="sm:col-span-6">
-                                <label class="block mb-2 text-sm font-medium "
-                                       for="file_input">Upload image</label>
-                                <input
-                                    class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    id="file_input" type="file">
+                                <label for="status"
+                                       class="block mb-2 text-sm font-medium ">Status</label>
+                                <select id="status"
+                                        name="status"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                >
+                                    @foreach(App\Enums\TableStatus::cases() as $status)
+                                        <option value="{{ $status->value }}">{{ $status->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="sm:col-span-6">
+                                <label for="location"
+                                       class="block mb-2 text-sm font-medium ">Location</label>
+                                <select id="location"
+                                        name="location"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                >
+                                    @foreach(App\Enums\TableLocation::cases() as $location)
+                                        <option value="{{ $location->value }}">{{ $location->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="sm:col-span-6">

@@ -876,9 +876,6 @@ select {
 .max-w-xl {
   max-width: 36rem;
 }
-.max-w-0 {
-  max-width: 0rem;
-}
 .flex-1 {
   flex: 1 1 0%;
 }
