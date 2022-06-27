@@ -25,6 +25,9 @@
                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                        placeholder="First Name"
                                        required="">
+                                @error('first_name')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="sm:col-span-6">
@@ -36,6 +39,9 @@
                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                        placeholder="Last Name"
                                        required="">
+                                @error('last_name')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="sm:col-span-6">
@@ -46,6 +52,9 @@
                                        name="email"
                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                        required="">
+                                @error('email')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="sm:col-span-6">
@@ -56,6 +65,9 @@
                                        name="phone_number"
                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                        required="">
+                                @error('phone_number')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="sm:col-span-6">
@@ -66,6 +78,9 @@
                                        name="res_date"
                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                        required="">
+                                @error('res_date')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="sm:col-span-6">
@@ -76,6 +91,9 @@
                                        name="guest_number"
                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                        required="">
+                                @error('guest_number')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="sm:col-span-6">
@@ -89,6 +107,9 @@
                                         <option value="{{ $table->id }}">{{ $table->name }}</option>
                                     @endforeach
                                 </select>
+                                @error('table_id')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="sm:col-span-6">

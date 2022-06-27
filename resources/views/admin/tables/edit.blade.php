@@ -24,22 +24,30 @@
                                        name="name"
                                        value="{{ $table->name }}"
                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                       placeholder="John" required="">
+                                       placeholder="John"
+                                       required="">
+                                @error('name')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="sm:col-span-6">
-                                <label for="price"
+                                <label for="guest_number"
                                        class="block mb-2 text-sm font-medium">Guest</label>
                                 <input type="number"
                                        id="guest_number"
                                        name="guest_number"
                                        value="{{ $table->guest_number }}"
                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                       placeholder="100" required="">
+                                       placeholder="100"
+                                       required="">
+                                @error('guest_number')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="sm:col-span-6">
-                                <label for="categories"
+                                <label for="status"
                                        class="block mb-2 text-sm font-medium ">Status</label>
                                 <select
                                         id="status"
@@ -50,10 +58,13 @@
                                         <option value="{{ $status->value }}" @selected($status->value === $table->status->value) >{{ $status->name }}</option>
                                     @endforeach
                                 </select>
+                                @error('status')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="sm:col-span-6">
-                                <label for="categories"
+                                <label for="location"
                                        class="block mb-2 text-sm font-medium ">Location</label>
                                     <select
                                         id="location"
@@ -64,6 +75,9 @@
                                         <option value="{{ $location->value }}" @selected($location->value === $table->location->value) >{{ $location->name }}</option>
                                     @endforeach
                                 </select>
+                                @error('location')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="sm:col-span-6">
