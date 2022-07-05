@@ -16,7 +16,7 @@
           <a href="#_" type="button"
              class="inline-flex items-center justify-center px-6 py-2 text-base font-bold leading-6 text-white bg-green-600 rounded-full lg:w-full md:w-auto hover:bg-green-500 focus:outline-none">
             Make your Reservation
-          </a>
+          </a></span>
         </div>
     </div>
     <!-- End Main Hero Content -->
